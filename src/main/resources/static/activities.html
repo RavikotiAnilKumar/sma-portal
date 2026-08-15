@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awareness Activities - SMA Awareness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="index.html">SMA Awareness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About SMA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="symptoms.html">Symptoms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="diagnosis.html">Diagnosis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="treatment.html">Treatment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="survey.html">Take Survey</a></li>
+                    <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="activities.html">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Community Awareness Activities</h1>
+            <p class="lead">Documenting our outreach and impact in the community.</p>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <section class="mb-5 animate-up">
+            <h2 class="fw-bold border-bottom pb-2 mb-4">Awareness Sessions Log</h2>
+
+            <div id="activitiesContainer">
+                <!-- Activities will be loaded here dynamically -->
+                <div class="text-center py-5">
+                    <div class="spinner-border text-primary" role="status"></div>
+                    <p class="mt-2">Loading activities...</p>
+                </div>
+            </div>
+
+            <div id="adminControls" class="text-center mt-5 d-none">
+                <button class="btn btn-primary btn-lg px-5 shadow" data-bs-toggle="modal" data-bs-target="#addActivityModal">
+                    + Log New Awareness Activity
+                </button>
+            </div>
+            <div id="loginPrompt" class="text-center mt-5">
+                <a href="login.html" class="btn btn-outline-secondary">Admin Login to Add Activities</a>
+            </div>
+        </section>
+
+        <!-- Photographs Gallery Section -->
+        <section class="mb-5 animate-up">
+            <h2 class="fw-bold border-bottom pb-2 mb-4">Project Gallery</h2>
+            <div class="row g-3">
+                <div class="col-md-4 col-sm-6">
+                    <div class="ratio ratio-4x3 bg-light rounded d-flex align-items-center justify-content-center border">
+                        <span class="text-muted">Photo 1</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="ratio ratio-4x3 bg-light rounded d-flex align-items-center justify-content-center border">
+                        <span class="text-muted">Photo 2</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="ratio ratio-4x3 bg-light rounded d-flex align-items-center justify-content-center border">
+                        <span class="text-muted">Photo 3</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for adding activity (UI only) -->
+    <div class="modal fade" id="addActivityModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-header fw-bold">Log New Awareness Activity</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="activityForm">
+                        <div class="mb-3">
+                            <label class="form-label">Activity Name</label>
+                            <input type="text" class="form-control" name="activityName" placeholder="e.g. School Seminar" required>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="col">
+                                <label class="form-label">Date</label>
+                                <input type="date" class="form-control" name="date" required>
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Participants</label>
+                                <input type="number" class="form-control" name="participantsCount" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Location</label>
+                            <input type="text" class="form-control" name="location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" name="description" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Geo-Tag (Optional)</label>
+                            <input type="text" class="form-control" name="geoTag" placeholder="e.g. 12.9° N, 77.5° E">
+                        </div>
+                        <div class="text-end">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save Activity</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 SMA Awareness Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/activities.js"></script>
+</body>
+</html>

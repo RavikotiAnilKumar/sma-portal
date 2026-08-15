@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration - SMA Awareness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="bg-light">
+    <div class="container vh-100 d-flex align-items-center justify-content-center">
+        <div class="card shadow-lg border-0 p-4 animate-up" style="width: 100%; max-width: 400px;">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold text-primary">Admin Register</h2>
+                <p class="text-muted">Create a new management account</p>
+            </div>
+            <form id="registerForm">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2">Register</button>
+            </form>
+            <div class="text-center mt-3">
+                <p class="small text-muted">Already have an account? <a href="login.html">Login here</a></p>
+                <a href="index.html" class="text-decoration-none small">← Back to Portal</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            fetch('https://sma-portal-backend.onrender.com/api/users/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ fullName, username, password })
+            })
+            .then(async response => {
+                const text = await response.text();
+                if (response.ok) {
+                    alert(text);
+                    window.location.href = 'login.html';
+                } else {
+                    alert(text);
+                }
+            })
+            .catch(err => alert('Registration failed. Ensure backend is running.'));
+        });
+    </script>
+</body>
+</html>

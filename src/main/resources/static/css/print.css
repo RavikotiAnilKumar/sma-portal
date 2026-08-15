@@ -1,0 +1,44 @@
+/* Print Styles for SMA Awareness Portal Report */
+
+@media print {
+    .navbar, footer, .btn, .breadcrumb, .nav-tabs {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        font-size: 12pt;
+    }
+
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .card {
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+    }
+
+    h1, h2, h3, h4 {
+        color: #0056b3 !important;
+    }
+
+    .display-5 {
+        font-size: 24pt !important;
+    }
+
+    canvas {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    .animate-up, .animate-fade {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

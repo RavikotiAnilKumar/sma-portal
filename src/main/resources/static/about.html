@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About SMA - SMA Awareness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="index.html">SMA Awareness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About SMA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="symptoms.html">Symptoms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="diagnosis.html">Diagnosis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="treatment.html">Treatment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="survey.html">Take Survey</a></li>
+                    <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">About Spinal Muscular Atrophy</h1>
+        </div>
+    </header>
+
+    <main class="container py-5">
+        <section class="mb-5">
+            <h2 class="fw-bold border-bottom pb-2">What is SMA?</h2>
+            <p>Spinal Muscular Atrophy (SMA) is a genetic disease that affects motor neurons—nerve cells in the spinal cord that control muscle movement. When motor neurons die, muscles weaken and waste away (atrophy).</p>
+            <p>SMA affects an individual's ability to walk, eat, and breathe. It is a leading genetic cause of death for infants.</p>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="fw-bold border-bottom pb-2">Causes</h2>
+            <p>SMA is caused by a mutation or deletion in the **SMN1 (Survival Motor Neuron 1)** gene. This gene is responsible for producing the SMN protein, which is essential for the survival and health of motor neurons.</p>
+            <p>Most cases of SMA are inherited in an autosomal recessive pattern, meaning both parents must carry the mutated gene and pass it on to their child.</p>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="fw-bold border-bottom pb-2">Types of SMA</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Type 1 (Werdnig-Hoffmann)</h5>
+                            <p class="card-text small text-muted">Onset: Before 6 months. Infants usually cannot sit without support.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Type 2</h5>
+                            <p class="card-text small text-muted">Onset: 6-18 months. Children can sit but typically cannot stand or walk independently.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Type 3 (Kugelberg-Welander)</h5>
+                            <p class="card-text small text-muted">Onset: After 18 months. Children can stand and walk, but may lose this ability later.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-primary shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Type 4</h5>
+                            <p class="card-text small text-muted">Onset: Adulthood (usually after age 20-30). Symptoms are typically mild.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-warning p-4 rounded shadow-sm mb-5">
+            <h4 class="fw-bold">Important Message</h4>
+            <p class="mb-0">This website is for educational and awareness purposes and does not replace professional medical advice. If you suspect any symptoms, please consult a qualified healthcare professional immediately.</p>
+        </section>
+
+        <!-- Feedback Section -->
+        <section class="bg-light p-4 rounded border animate-up">
+            <h5 class="fw-bold mb-3">Was this information helpful?</h5>
+            <div class="d-flex gap-2 mb-3">
+                <button class="btn btn-outline-primary feedback-btn" data-rating="5">Excellent ⭐⭐⭐⭐⭐</button>
+                <button class="btn btn-outline-primary feedback-btn" data-rating="3">Helpful ⭐⭐⭐</button>
+                <button class="btn btn-outline-primary feedback-btn" data-rating="1">Needs Improvement ⭐</button>
+            </div>
+            <div id="feedbackForm" class="d-none">
+                <textarea class="form-control mb-2" id="feedbackComment" placeholder="Any suggestions?"></textarea>
+                <button class="btn btn-primary btn-sm" id="submitFeedback">Submit Feedback</button>
+            </div>
+            <div id="feedbackThanks" class="d-none text-success fw-bold">
+                Thank you for your feedback!
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2026 SMA Awareness Portal. All Rights Reserved.</p>
+            <p class="small text-muted">References: MedlinePlus, Cure SMA, MDA.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/feedback.js"></script>
+</body>
+</html>
