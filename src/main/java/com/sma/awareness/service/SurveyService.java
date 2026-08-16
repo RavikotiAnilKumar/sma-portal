@@ -29,13 +29,16 @@ public class SurveyService {
         participant.setGender(rawData.get("gender"));
         participant = participantRepository.save(participant);
 
-        // 2. Save Responses for each question
+        // 2. Save Responses
         List<SurveyQuestion> questions = questionRepository.findAll();
         String stage = rawData.getOrDefault("surveyStage", "POST");
 
-        for (SurveyQuestion q : questions) {
-            // Map key q1, q2, etc to question text
-            String answer = rawData.get("q" + q.getId());
+        // Loop through all questions in database
+        for (int i = 0; i < questions.size(); i++) {
+            SurveyQuestion q = questions.get(i);
+            // The frontend sends q1, q2... q15 based on order
+            String answer = rawData.get("q" + (i + 1)); 
+            
             if (answer != null) {
                 SurveyResponse response = new SurveyResponse();
                 response.setParticipant(participant);
