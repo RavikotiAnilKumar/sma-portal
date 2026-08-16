@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: sma-portal-backend
+    name: sma-awareness-portal-live
     runtime: docker
     plan: free
     envVars:
